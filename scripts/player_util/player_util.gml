@@ -20,7 +20,7 @@ function do_groundpound()
 			scr_sound_3d(sfx_killingblow, x, y)
 			scr_sound_3d(sfx_shotgunshot, x, y)
 			reset_anim(spr_player_shotgun_shootdown)
-			vsp = -11
+			vsp = -7
 			with instance_create(x, y, obj_shotgunblast)
                 sprite_index = spr_shotgunblast_down
 		}
@@ -32,38 +32,11 @@ function do_grab()
 	if input_buffers.grab > 0
 	{
 		input_buffers.grab = 0
-		if has_shotgun
+		 if !input_direction_check(INPUTS.up)
 		{
-			scr_sound_3d(sfx_killenemy, x, y)
-			scr_sound_3d(sfx_shotgunshot, x, y)
-			with create_effect(x, y, spr_guneffect)
-			    image_xscale = other.xscale
-			state = states.shotgunshoot
-			if grounded
-			    movespeed = 0
-			reset_anim(spr_player_shotgun_shoot)
-			with instance_create(x + xscale * 46, (y + 6), obj_shotgunblast)
-				image_xscale = other.xscale
-		}
-		else if !input_direction_check(INPUTS.up)
-		{
-			movespeed = max(movespeed, 5)
-			if state == states.normal
-				movespeed = 8
-			state = states.grab
-			reset_anim(spr_player_suplexdash)
+			state = states.slap
 			scr_sound_3d_on(myemitter, sfx_suplexdash)
 			particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
-		}
-		else
-		{
-			vsp = grounded ? -14 : -10
-			hsp = abs(hsp) * xscale
-			state = states.punch
-			reset_anim(spr_player_uppercut)
-			image_speed = 0.35
-			create_effect(x, y, spr_highjumpcloud2)
-			scr_sound_3d_pitched(sfx_uppercut, x, y)
 		}
 	}
 }

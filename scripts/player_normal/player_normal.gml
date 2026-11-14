@@ -170,7 +170,7 @@ function player_normal()
 		scr_sound_3d(sfx_jump, x, y)
 	}
 	
-//	do_grab() //note: intentional game design
+do_grab() //note: intentional game design
 	
 //	if input_check(INPUTS.dash) && !scr_hitwall(x + xscale, y)
 //	{

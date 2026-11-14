@@ -92,4 +92,3 @@ if state == states.backtohub
 if state == states.hold
 	state = states.normal
 
-do_the_funny()

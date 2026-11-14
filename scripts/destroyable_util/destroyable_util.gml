@@ -13,6 +13,8 @@ function break_destroyables()
 	
 	var d_list = ds_list_create()
 	instance_place_list(d_pos.x, d_pos.y, obj_destroyable, d_list, false)
+	instance_place_list(d_pos.x, d_pos.y, obj_metalblock, d_list, false)
+	instance_place_list(d_pos.x, d_pos.y, obj_metalblock_secret, d_list, false)
 	
 	var horizontal_states = [
 		states.mach2,
@@ -22,7 +24,8 @@ function break_destroyables()
 		states.punch,
 		states.hit,
 		states.swingding,
-		states.slip
+		states.slip,
+		states.slap
 	]
 	
 	var vertical_states = [
@@ -78,32 +81,3 @@ function break_destroyables()
 	ds_list_destroy(d_list)
 }
 
-function do_the_funny(){
-	with obj_destroyable{
-	instance_destroy()
-	}
-	with obj_destroyable_big{
-	instance_destroy()
-	}
-	with obj_destroyable_big_secret{
-	instance_destroy()
-	}
-	with obj_destroyable_secret{
-	instance_destroy()
-	}
-	with obj_destroyable_bigcollect{
-	instance_destroy()
-	}
-	with obj_destroyable_collect{
-	instance_destroy()
-	}
-	with obj_metalblock{
-	instance_destroy()
-	}
-	with obj_metalblock_secret{
-	instance_destroy()
-	}
-	with obj_onewayblock{
-	instance_destroy()
-	}
-}

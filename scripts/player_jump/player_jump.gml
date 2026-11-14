@@ -126,5 +126,5 @@ function player_jump()
 			reset_anim_on_end(spr_player_hurtjump_fall)
 			break;
 	}
-	
+	do_grab() //note: intentional game design
 }

@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"CompleteCook_supersponge",
-    "path":"CompleteCook_supersponge.yyp",
+    "name":"CompleteCook",
+    "path":"CompleteCook.yyp",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

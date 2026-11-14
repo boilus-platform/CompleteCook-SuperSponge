@@ -44,5 +44,8 @@ enum states
 	
 	//extras
 	throwing,
-	transition
+	transition,
+	
+	// goody shit
+	slap
 }

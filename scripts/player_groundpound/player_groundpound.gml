@@ -2,7 +2,7 @@ function player_groundpound()
 {
 	if vsp >= 2
 	{
-		if vsp > 19
+		if vsp > 17
 		{
 			aftimg_timers.mach.do_it = true
 			if particle_timer > 0
